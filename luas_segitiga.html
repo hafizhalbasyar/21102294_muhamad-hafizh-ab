@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Luas Segitiga</title>
+</head>
+<body>
+
+<h1>Kalkulator Luas Segitiga</h1>
+
+<form id="triangle-form">
+  <label for="tinggi">Tinggi Segitiga:</label>
+  <input type="number" id="tinggi" name="tinggi" required>
+  <br>
+
+  <label for="alas">Alas Segitiga:</label>
+  <input type="number" id="alas" name="alas" required>
+  <br>
+
+  <button type="button" onclick="hitungLuas()">Hitung Luas</button>
+</form>
+
+<div id="hasil-luas"></div>
+
+<script>
+function hitungLuas() {
+  var tinggi = parseFloat(document.getElementById("tinggi").value);
+  var alas = parseFloat(document.getElementById("alas").value);
+  
+  if (!isNaN(tinggi) && !isNaN(alas)) {
+    var luas = 0.5 * alas * tinggi;
+    document.getElementById("hasil-luas").innerHTML = "Luas Segitiga: " + luas;
+  } else {
+    document.getElementById("hasil-luas").innerHTML = "Masukkan angka yang valid.";
+  }
+}
+</script>
+
+</body>
+</html>
